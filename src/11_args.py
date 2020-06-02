@@ -44,9 +44,9 @@ print(f2(a))    # Should print 22
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments.
 # Note: Google "python default arguments" for a hint.
-
+#default arguments have to be after any non-default arguments.
 # YOUR CODE HERE
-def f3(a = 1, b):
+def f3(a, b = 1):
     return a+b 
 
 print(f3(1, 2))  # Should print 3
@@ -60,19 +60,25 @@ print(f3(8))     # Should print 9
 # key: baz, value: 12
 #
 # Note: Google "python keyword arguments".
-
+#** ets you take in an arbitrary amount of keyword arguments
 # YOUR CODE HERE
+def f4(posit = {},**keys):
+    # print(keys)
+    for i,j in posit.items():
+        print(f"key: {i}, value: {j}")
+    for key, value in keys.items():
+        print(f"key: {key}, value: {value}")
 
 # Should print
 # key: a, value: 12
 # key: b, value: 30
-# f4(a=12, b=30)
+f4(a=12, b=30)
 
 # Should print
 # key: city, value: Berkeley
 # key: population, value: 121240
 # key: founded, value: "March 23, 1868"
-# f4(city="Berkeley", population=121240, founded="March 23, 1868")
+f4(city="Berkeley", population=121240, founded="March 23, 1868")
 
 d = {
     "monster": "goblin",
@@ -80,4 +86,4 @@ d = {
 }
 
 # How do you have to modify the f4 call below to make this work?
-# f4(d)
+f4(d)
