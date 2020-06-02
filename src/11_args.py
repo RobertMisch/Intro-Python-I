@@ -64,8 +64,8 @@ print(f3(8))     # Should print 9
 # YOUR CODE HERE
 def f4(posit = {},**keys):
     # print(keys)
-    for i,j in posit.items():
-        print(f"key: {i}, value: {j}")
+    for k,v in posit.items():
+        print(f"key: {k}, value: {v}")
     for key, value in keys.items():
         print(f"key: {key}, value: {value}")
 

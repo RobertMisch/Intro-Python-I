@@ -29,4 +29,44 @@ it should use today’s date to get the month and year.
 
 import sys
 import calendar
+# import datetime
 from datetime import datetime
+
+# print(sys.argv)
+recieved=sys.argv
+# - If the user doesn't specify any input, your program should
+#    print the calendar for the current month. The 'datetime'
+#    module may be helpful for this.
+if(len(recieved)==1): 
+    month = datetime.today().month
+    year = datetime.today().year
+    cal=calendar.TextCalendar()
+    print(cal.formatmonth(year,month))
+    print("Welcome to the calendar app. \nif you wish to see other months and years, please call our program in this format:\n14_cal.py [month] [year]")
+    # other ways to make calenders
+    # for x in cal.itermonthdates(year, month)):
+      #print(x)
+    # monthCalender = calendar.monthcalendar(year, month)
+    # print(monthCalender)
+
+# - If the user specifies one argument, assume they passed in a
+#    month and render the calendar for that month of the current year.
+if(len(recieved)==2): 
+    month = int(recieved[1])
+    year = datetime.today().year
+    cal=calendar.TextCalendar()
+    print(cal.formatmonth(year,month))
+
+#  - If the user specifies two arguments, assume they passed in
+#    both the month and the year. Render the calendar for that
+#    month and year.
+if(len(recieved)==3): 
+    month = int(recieved[1])
+    year = int(recieved[2])
+    cal=calendar.TextCalendar()
+    print(cal.formatmonth(year,month))
+
+#  - Otherwise, print a usage statement to the terminal indicating
+#    the format that your program expects arguments to be given.
+#    Then exit the program.
+#I added on to the base case for this
