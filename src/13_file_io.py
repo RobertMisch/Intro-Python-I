@@ -12,8 +12,12 @@ https://docs.python.org/3/tutorial/inputoutput.html#reading-and-writing-files
 # YOUR CODE HERE
 myFile = open('foo.txt', 'r') # you can't put with when you assign a file like this. look into with statement
 print(myFile.read())
-# myFile.close()
+myFile.close()
 # print(myFile.closed())
+#example from christina
+#with open('./src/foo.txt') as f:
+    # read_data = f.read()
+# print(read_data)
 # Open up a file called "bar.txt" (which doesn't exist yet) for
 # writing. Write three lines of arbitrary content to that file,
 # then close the file. Open up "bar.txt" and inspect it to make
