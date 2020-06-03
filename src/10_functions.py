@@ -10,3 +10,7 @@ num = int(num)
 
 # YOUR CODE HERE
 
+if(int(num)%2 == 0):
+    print(f"{num} is even")
+else:
+    print(f"{num} is odd")

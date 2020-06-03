@@ -6,6 +6,9 @@
 
 # YOUR CODE HERE
 
+def f1(a,b):
+    return a+b
+
 print(f1(1, 2))
 
 # Write a function f2 that takes any number of integer arguments and returns the
@@ -13,6 +16,19 @@ print(f1(1, 2))
 # Note: Google for "python arbitrary arguments" and look for "*args"
 
 # YOUR CODE HERE
+
+def f2(*nums):
+    total=0
+    # print(nums[0])
+    if isinstance(nums[0], list):
+        myList=nums[0]
+        for i in myList:
+            total=total+i
+        return total
+    else:
+        for i in nums:
+            total=total+i
+        return total
 
 print(f2(1))                    # Should print 1
 print(f2(1, 3))                 # Should print 4
@@ -28,8 +44,10 @@ print(f2(a))    # Should print 22
 # it returns that value plus 1. If two arguments, it returns the sum of the
 # arguments.
 # Note: Google "python default arguments" for a hint.
-
+#default arguments have to be after any non-default arguments.
 # YOUR CODE HERE
+def f3(a, b = 1):
+    return a+b 
 
 print(f3(1, 2))  # Should print 3
 print(f3(8))     # Should print 9
@@ -42,8 +60,14 @@ print(f3(8))     # Should print 9
 # key: baz, value: 12
 #
 # Note: Google "python keyword arguments".
-
+#** ets you take in an arbitrary amount of keyword arguments
 # YOUR CODE HERE
+def f4(posit = {},**keys):
+    # print(keys)
+    for k,v in posit.items():
+        print(f"key: {k}, value: {v}")
+    for key, value in keys.items():
+        print(f"key: {key}, value: {value}")
 
 # Should print
 # key: a, value: 12
